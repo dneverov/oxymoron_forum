@@ -22,4 +22,4 @@ release:
 
 production:
   <<: *default
-database: forum_prod
+  database: forum_prod

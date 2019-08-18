@@ -50,5 +50,20 @@ group :development do
   gem 'spring-watcher-listen', '~> 2.0.0'
 end
 
+gem 'active_model_serializers', '0.9.4'
+gem 'pg'
+gem 'slim'
+gem 'slim-rails'
+gem 'devise'
+gem 'gon'
+gem 'carrierwave'
+gem 'mysql2',          '~> 0.3.18', :platform => :ruby
+gem 'thinking-sphinx', '~> 3.1.4'
+gem 'mini_magick'
+gem "oxymoron"
+gem 'kaminari'
+gem 'oj'
+gem 'file_validators'
+
 # Windows does not include zoneinfo files, so bundle the tzinfo-data gem
 gem 'tzinfo-data', platforms: [:mingw, :mswin, :x64_mingw, :jruby]
