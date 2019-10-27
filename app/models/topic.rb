@@ -5,7 +5,13 @@ class Topic < ApplicationRecord
 
   validates_presence_of :theme, :title, :content
 
+  # dennis: Differs from the https://habr.com/en/post/300954/
   after_create :create_post
+
+  def self.pluck_fields
+    ["topics.id", "topics.title", "topics.last_post", "topics.posts_count",
+     "users.id", "users.name", "themes.id", "themes.title"]
+  end
 
   private
     def create_post
