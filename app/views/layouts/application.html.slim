@@ -1,0 +1,22 @@
+html ng-app="app"
+  head
+    title only-text="true" ng-yield="title" = @title || "Форум на AngularJS и Ruby On Rails"
+    meta name="description" content="#{@description || 'Форум написан специально для статьи на хабре. В данной статье вы найдете информацию по построению своего Single Page Application на примере данного приложения.'}"
+    base href="/"
+    = stylesheet_link_tag 'application'
+  body ng-controller="MainCtrl as main" ng-class="gon.current_user.role"
+    .layout.body
+      .search
+        input.form-control placeholder="Поиск" type="text" ng-model="main.search" ng-model-options="{debounce: 300}"
+      .bredcrumbs ng-yield="bredcrumbs"
+      .wrapper
+        .content
+          ui-view
+        .sidebar
+          = render "layouts/sidebar"
+                  
+    = render template: "components/render"
+    script src="https://www.google.com/recaptcha/api.js?onload=vcRecaptchaApiLoaded&render=explicit" async="" defer=""
+    = javascript_include_tag 'application'
+
+= Gon::Base.render_data

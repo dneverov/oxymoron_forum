@@ -1,5 +1,5 @@
 Rails.application.routes.draw do
-  groot to: 'groups#index'
+  root to: 'groups#index'
 
   devise_for :users, controllers: {
     sessions: 'auth/sessions',
